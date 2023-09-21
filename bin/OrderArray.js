@@ -1,7 +1,7 @@
 const TypeOrder = require("./TypeOrder");
 
 /**
- * Función para ordenar un arreglo por sus atributos atributo
+ * Función para ordenar un arreglo de JSON por sus atributos
  * @author Saul Reyes Medina <saulreyesm@outlook.com>
  * @param {TypeOrder} typeOrder
  * @param {String} ...attributes
@@ -15,6 +15,35 @@ function orderJSONByAttribute(typeOrder, ...attributes) {
 		for (let attribute of attributes) {
 			let valueA = a[attribute];
 			let valueB = b[attribute];
+
+			validAttribute(valueA, valueB);
+			order = sort(valueA, valueB, typeOrder);
+			if (order != 0) {
+				break;
+			}
+		}
+
+		return order;
+	});
+
+	return orderedArray;
+}
+
+/**
+ * Función para ordenar un arreglo de arreglos por sus posición
+ * @author Saul Reyes Medina <saulreyesm@outlook.com>
+ * @param {TypeOrder} typeOrder
+ * @param {Number} ...positions Empezando de 0
+ * @returns {Array[JSON]}
+ */
+function orderByPosition(typeOrder, ...positions) {
+	validArguments(typeOrder, positions);
+
+	let orderedArray = this.sort(function (a, b) {
+		let order = 0;
+		for (let position of positions) {
+			let valueA = a[position];
+			let valueB = b[position];
 
 			validAttribute(valueA, valueB);
 			order = sort(valueA, valueB, typeOrder);
@@ -99,4 +128,4 @@ function validAttribute(a, b) {
 	}
 }
 
-module.exports = {orderJSONByAttribute};
+module.exports = {orderJSONByAttribute, orderByPosition};
