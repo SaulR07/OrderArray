@@ -1,5 +1,5 @@
 {
-	"name": "order-array",
+	"name": "order-arrays",
 	"version": "1.0.0",
 	"description": "Modulo para ordenar elementos de un arreglo.",
 	"main": "./src/index",
@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SaulR07/"
+		"url": "https://github.com/SaulR07/OrderArray"
 	},
 	"keywords": [
 		"Ordenar",
