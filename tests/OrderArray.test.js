@@ -1,16 +1,14 @@
 const TypeOrder = require("../src/index");
 
 let data = [
-	{nombre: "Edgardo", edad: 29, fecha: new Date("2/7/1993"), activo: true},
-	{nombre: "Edgardo", edad: 38, fecha: new Date("2/5/ 1983"), activo: true},
-	{nombre: "Saul", edad: 30, fecha: new Date("2/7/1993"), activo: true},
-	{nombre: "Saul", edad: 30, fecha: new Date("2/7/1993"), activo: false},
-	{nombre: "Alberto", edad: 48, fecha: new Date("2/10/1980"), activo: true}
+	{name: "Hugo", age: 29, born: new Date("8/28/2000"), active: true},
+	{name: "Paco", age: 30, born: new Date("4/18/1985"), active: true},
+	{name: "Luis", age: 30, born: new Date("2/7/1993"), active: false}
 ];
 
 describe("Order Array", () => {
 	test("Orden Array[JSON] by attribute", () => {
-		let result = data.orderJSONByAttribute(TypeOrder.ASC, "edad");
-		expect(result[1].nombre).toBe("Saul");
+		let result = data.orderJSONByAttribute(TypeOrder.ASC, "age", "name");
+		expect(result[1].name).toBe("Luis");
 	});
 });
