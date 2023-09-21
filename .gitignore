@@ -3,5 +3,6 @@ node_modules
 
 #VSCode
 .vscode/*
+!.vscode/extensions.json
 
 package-lock.json
