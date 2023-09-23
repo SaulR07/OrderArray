@@ -99,16 +99,15 @@ function sort(a, b, typeOrder) {
  * Función para validar los argumentos de la función
  * @author Saul Reyes Medina <saulreyesm@outlook.com>
  * @param {TypeOrder} typeOrder
- * @param {any} attributes
- * @returns {any}
+ * @param {any} orderArguments
  */
-function validArguments(typeOrder, attributes) {
+function validArguments(typeOrder, orderArguments) {
 	if (typeOrder != TypeOrder.ASC && typeOrder != TypeOrder.DESC) {
-		throw new Error("Argument type orden is incorrect");
+		throw new Error("Type orden is incorrect");
 	}
 
-	if (attributes === null || attributes === undefined) {
-		throw new Error("Argument Attributes is Null or Undefined");
+	if (orderArguments === null || orderArguments === undefined) {
+		throw new Error("Order arguments is Null or Undefined");
 	}
 }
 

@@ -2,10 +2,10 @@
 
 Modulo para ordenar elementos de un arreglo.
 
-## 📀 Install
+## 💿 Install
 
 ```properties
-npm install order-array
+npm install order-arrays
 ```
 
 ## 🚀 Usage
@@ -22,6 +22,14 @@ let data = [
 
 let result = data.orderJSONByAttribute(TypeOrder.ASC, "age", "name");
 
+/*Return
+result = [
+ {name: "Hugo", age: 29, born: new Date("8/28/2000"), active: true},
+ {name: "Luis", age: 30, born: new Date("2/7/1993"), active: false},
+ {name: "Paco", age: 30, born: new Date("4/18/1985"), active: true}
+];
+*/
+
 //For Array[Array]
 let data = [
 	["Hugo", 29, new Date("8/28/2000"), true],
@@ -29,13 +37,13 @@ let data = [
 	["Luis", 30, new Date("2/7/1993"), false]
 ];
 
-let result = data.orderJSONByAttribute(TypeOrder.ASC, 1, 0);
+let result = data.orderByPosition(TypeOrder.ASC, 1, 0);
 
 /*Return
 result = [
-	{name: "Hugo", age: 29, born: new Date("8/28/2000"), active: true},
-	{name: "Luis", age: 30, born: new Date("2/7/1993"), active: false},
-	{name: "Paco", age: 30, born: new Date("4/18/1985"), active: true}
+ ["Hugo", 29, new Date("8/28/2000"), true],
+ ["Luis", 30, new Date("2/7/1993"), false],
+ ["Paco", 30, new Date("4/18/1985"), true]
 ];
 */
 ```
