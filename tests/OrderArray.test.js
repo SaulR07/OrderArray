@@ -19,4 +19,9 @@ describe("Order Array", () => {
 		let result = data.orderJSONByAttribute(TypeOrder.ASC, "age", "name");
 		expect(result[1].name).toBe("Luis");
 	});
+	test("Orden Array[String, Number, Date]", () => {
+		let data = ["Hugo", "Paco", "Luis"];
+		let result = data.order(TypeOrder.DESC);
+		expect(result[1]).toBe("Luis");
+	});
 });

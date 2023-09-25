@@ -58,6 +58,18 @@ function orderByPosition(typeOrder, ...positions) {
 	return orderedArray;
 }
 
+function order(typeOrder) {
+	if (typeOrder != TypeOrder.ASC && typeOrder != TypeOrder.DESC) {
+		throw new Error("Type orden is incorrect");
+	}
+
+	let orderedArray = this.sort(function (a, b) {
+		return sort(a, b, typeOrder);
+	});
+
+	return orderedArray;
+}
+
 /**
  * Función donde se ordenan los elementos
  * @author Saul Reyes Medina <saulreyesm@outlook.com>
@@ -127,4 +139,4 @@ function validAttribute(a, b) {
 	}
 }
 
-module.exports = {orderJSONByAttribute, orderByPosition};
+module.exports = {orderJSONByAttribute, orderByPosition, order};

@@ -1,6 +1,6 @@
 {
 	"name": "order-arrays",
-	"version": "1.0.5",
+	"version": "1.0.7",
 	"description": "Modulo para ordenar elementos de un arreglo.",
 	"main": "./src/index",
 	"directories": {
