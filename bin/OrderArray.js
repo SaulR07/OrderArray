@@ -1,4 +1,4 @@
-const TypeOrder = require("./TypeOrder");
+const TypeOrder = require("./enums/TypeOrder");
 
 /**
  * Función para ordenar un arreglo de JSON por sus atributos
@@ -10,23 +10,21 @@ const TypeOrder = require("./TypeOrder");
 function orderJSONByAttribute(typeOrder, ...attributes) {
 	validArguments(typeOrder, attributes);
 
-	let orderedArray = this.sort(function (a, b) {
-		let order = 0;
+	return this.sort(function (a, b) {
+		let orderJSON = 0;
 		for (let attribute of attributes) {
 			let valueA = a[attribute];
 			let valueB = b[attribute];
 
 			validAttribute(valueA, valueB);
-			order = sort(valueA, valueB, typeOrder);
-			if (order != 0) {
+			orderJSON = sort(valueA, valueB, typeOrder);
+			if (orderJSON != 0) {
 				break;
 			}
 		}
 
-		return order;
+		return orderJSON;
 	});
-
-	return orderedArray;
 }
 
 /**
@@ -39,23 +37,21 @@ function orderJSONByAttribute(typeOrder, ...attributes) {
 function orderByPosition(typeOrder, ...positions) {
 	validArguments(typeOrder, positions);
 
-	let orderedArray = this.sort(function (a, b) {
-		let order = 0;
+	return this.sort(function (a, b) {
+		let orderArray = 0;
 		for (let position of positions) {
 			let valueA = a[position];
 			let valueB = b[position];
 
 			validAttribute(valueA, valueB);
-			order = sort(valueA, valueB, typeOrder);
-			if (order != 0) {
+			orderArray = sort(valueA, valueB, typeOrder);
+			if (orderArray != 0) {
 				break;
 			}
 		}
 
-		return order;
+		return orderArray;
 	});
-
-	return orderedArray;
 }
 
 function order(typeOrder) {
@@ -63,11 +59,9 @@ function order(typeOrder) {
 		throw new Error("Type orden is incorrect");
 	}
 
-	let orderedArray = this.sort(function (a, b) {
+	return this.sort(function (a, b) {
 		return sort(a, b, typeOrder);
 	});
-
-	return orderedArray;
 }
 
 /**

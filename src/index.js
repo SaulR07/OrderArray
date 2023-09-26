@@ -1,5 +1,5 @@
 const orderArray = require("../bin/OrderArray");
-const TypeOrder = require("../bin/TypeOrder");
+const TypeOrder = require("../bin/enums/TypeOrder");
 
 Array.prototype.order = orderArray.order;
 Array.prototype.orderByPosition = orderArray.orderByPosition;

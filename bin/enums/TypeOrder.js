@@ -1,4 +1,5 @@
 /**
+ * @enum
  * Clase para representar el tipo de orden
  * @author Saul Reyes Medina <saulreyesm@outlook.com>
  */
